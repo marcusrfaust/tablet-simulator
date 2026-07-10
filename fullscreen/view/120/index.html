@@ -142,10 +142,8 @@
     // Salva ID
     localStorage.setItem(PID_KEY, pid);
 
-    // Salva base URL do tablet (domínio + /fullscreen/view/)
-    var baseUrl = window.location.protocol + '//' + window.location.hostname
-      + (window.location.port ? ':' + window.location.port : '')
-      + '/fullscreen/view/';
+    // Salva base URL do tablet (funciona c/ path prefix ex: /tablet-simulator/)
+    var baseUrl = window.location.href.replace(/\/?\d+\/?$/, '') + '/';
     localStorage.setItem(URL_KEY, baseUrl);
 
     // Salva título da propriedade
